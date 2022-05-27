@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  server: 
+    container_name: rate-this-triplet-server
+    build: 
+      context: server
+      dockerfile: Dockerfile
+    expose:
+      - 5000
+    networks:
+      - net
+
+  nginx:
+    depends_on: 
+      - server
+    container_name: rate-this-triplet-nginx
+    image: nginx:latest
+    ports: 
+        - 80:80
+        - 443:443
+    restart: always
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./nginx/www/:/var/www/ui/:ro
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+    networks:
+      - net
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+
+networks:
+  net:
