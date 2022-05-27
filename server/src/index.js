@@ -8,6 +8,8 @@ import { getRandomTriplet } from './Triplets';
 
 const app = express();
 
+app.use(express.json());
+
 const server = http.createServer(app);
 
 exists().then(exists => {
@@ -23,6 +25,8 @@ app.get('/api/triplet', (req, res) => {
 
 // Records a triplet rating
 app.post('/api/rating', (req, res) => {
+  console.log('POST Received', req.body);
+
   const { anchor, similar, dissimilar, score } = req.body;
   const timestamp = new Date().toISOString();
 

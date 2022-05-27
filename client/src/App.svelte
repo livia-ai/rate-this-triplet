@@ -26,6 +26,21 @@
   // Shorthand
   const proxy = url => `/api/proxy?url=${url}`;
 
+  const rate = () => {
+    fetch('/api/rating', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        anchor: anchor.id,
+        similar: similar.id,
+        dissimilar: dissimilar.id,
+        score: 1
+      })
+    });
+  }
+
   onMount(() => fetchTriplet())
 </script>
 
@@ -51,6 +66,10 @@
         <img src={proxy(dissimilar.image)} alt="Different" />
       {/if}
     </div>
+  </div>
+
+  <div class="triplet-rating">
+    <button on:click={rate}>Rate!</button>
   </div>
 </main>
 

@@ -11,6 +11,9 @@ export default defineConfig({
       '/api/triplet': {
         target: 'http://localhost:5000'
       },
+      '/api/rating': {
+        target: 'http://localhost:5000'
+      },
       '/api/proxy': {
         target: 'http://localhost:5000'
       }
