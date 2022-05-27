@@ -1,5 +1,6 @@
 import http from 'http';
 import express from 'express';
+const request = require('request');
 
 import { getRandomTriplet } from './Triplets';
 
@@ -14,6 +15,12 @@ app.get('/api/triplet', (req, res) => {
 
 app.get('/api', (req, res) => {
   res.json({ message: 'Nothing to see here' }); 
+});
+
+// An HTTP proxy method for content that blocks deep linking
+app.get('/api/proxy', (req, res) => {
+  const { url } = req.query;
+  request.get(url).pipe(res);
 });
 
 server.listen(5000, () => 

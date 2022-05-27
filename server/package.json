@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/livia-ai/rate-this-triplet#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
