@@ -13,7 +13,7 @@ app.get('/api/triplet', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  res.json({ hello: 'world' }); 
+  res.json({ message: 'Nothing to see here' }); 
 });
 
 server.listen(5000, () => 

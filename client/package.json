@@ -1,0 +1,24 @@
+{
+  "name": "rate-this-triplet-client",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A demo web app that collects feedback on random LiviaAI triplets",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Rainer Simon",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.40",
+    "@tsconfig/svelte": "^3.0.0",
+    "@types/rbush": "^3.0.0",
+    "svelte": "^3.46.6",
+    "vite": "^2.9.1"
+  },
+  "dependencies": {
+    "svelte-icons-pack": "^1.4.6"
+  }
+}
