@@ -10,7 +10,7 @@ but requires manual steps. The process is based on [this guide](https://mindsers
 #### 1. Test if the setup works correctly
 
 ```sh
-docker-compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d livia-triplet-demo.no5.at
+docker-compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d rate-this-triplet.no5.at
 ```
 
 #### 2. Test if the setup works correctly
@@ -18,7 +18,7 @@ docker-compose run --rm  certbot certonly --webroot --webroot-path /var/www/cert
 With HTTPS still disabled, download certificate from LetsEncrypt:
 
 ```sh
-docker-compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d livia-triplet-demo.no5.at
+docker-compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d rate-this-triplet.no5.at
 ```
 
 #### 3. After the certificate is available
