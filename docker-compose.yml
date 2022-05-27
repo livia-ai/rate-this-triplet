@@ -1,6 +1,17 @@
 version: '3.9'
 
 services:
+  rethinkdb:
+    image: rethinkdb:2.4
+    expose:
+      - 8080
+      - 28015
+    restart: always
+    volumes:
+      - ./server/data/db:/app
+    networks:
+      - net
+      
   server: 
     container_name: rate-this-triplet-server
     build: 
