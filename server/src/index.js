@@ -25,14 +25,14 @@ app.get('/api/triplet', (req, res) => {
 
 // Records a triplet rating
 app.post('/api/rating', (req, res) => {
-  console.log('POST Received', req.body);
-
-  const { anchor, similar, dissimilar, score } = req.body;
+  const { anchor, similar, dissimilar, rating } = req.body;
   const timestamp = new Date().toISOString();
 
   insertRating({
-    anchor, similar, dissimilar, score, timestamp
+    anchor, similar, dissimilar, rating, timestamp
   });
+
+  res.json({ message: 'Thanks' });
 });
 
 // Helper proxy method to get around CORS and deep linking blocks
