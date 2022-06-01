@@ -11,4 +11,5 @@ export const initDB = () =>
   r.connect(CONFIG).then(conn =>
     r.dbCreate(CONFIG.db)
       .do(() => r.tableCreate('rating'))
+      .do(() => r.table('rating').indexCreate('timestamp'))
       .run(conn));

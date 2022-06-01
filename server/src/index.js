@@ -3,7 +3,7 @@ import express from 'express';
 import request from 'request';
 
 import { exists, initDB } from './db/init';
-import { insertRating } from './db/Rating';
+import { insertRating, listRatings } from './db/Rating';
 import { getRandomTriplet } from './Triplets';
 
 const app = express();
@@ -33,6 +33,12 @@ app.post('/api/rating', (req, res) => {
   });
 
   res.json({ message: 'Thanks' });
+});
+
+app.get('/api/ratings', (req, res) => {
+  listRatings().then(result => {
+    res.json(result);
+  });
 });
 
 // Helper proxy method to get around CORS and deep linking blocks
