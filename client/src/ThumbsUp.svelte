@@ -17,7 +17,7 @@
   class="thumbs thumps-up"
   on:click={onClick}>
   <div class="icon-container">
-    <Icon src={HiSolidThumbUp} class="thumb up"/>
+    <Icon src={HiSolidThumbUp} />
     <div class="illustration">
       <Icon src={BiSolidCheckbox} />
       <Icon src={BiSolidCheckbox} />

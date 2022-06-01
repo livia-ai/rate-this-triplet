@@ -16,7 +16,7 @@
   class="thumbs thumps-down"
   on:click={onClick}>
   <div class="icon-container">
-    <Icon src={HiSolidThumbDown} class="thumb down" />
+    <Icon src={HiSolidThumbDown} />
     <div class="illustration">
       <Icon src={BiCheckbox} />
       <Icon src={BiCheckbox} />

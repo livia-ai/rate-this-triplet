@@ -5,6 +5,7 @@
 
   import { onMount } from 'svelte';
 
+  let useProxy;
   let anchor;
   let similar;
   let dissimilar;
@@ -14,6 +15,7 @@
   const fetchTriplet = () => {
     loading = true;
 
+    useProxy = false;
     anchor = null;
     similar = null;
     dissimilar = null;
@@ -21,6 +23,7 @@
     fetch('/api/triplet')
       .then(res => res.json())
       .then(data => {
+        useProxy = data.proxy;
         anchor = data.anchor;
         similar = data.similar;
         dissimilar = data.dissimilar;
@@ -75,6 +78,7 @@
   </div>
 
   <Triplet 
+    useProxy={useProxy}
     anchor={anchor} 
     similar={similar} 
     dissimilar={dissimilar} 

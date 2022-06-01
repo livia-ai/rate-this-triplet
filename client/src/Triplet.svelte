@@ -3,6 +3,8 @@
   import SiSpinrilla from 'svelte-icons-pack/si/SiSpinrilla';
   import { afterUpdate, createEventDispatcher } from 'svelte';
 
+  export let useProxy; 
+
   export let anchor;
   export let similar;
   export let dissimilar;
@@ -16,7 +18,7 @@
   });
 
   // Runs file downloads through the server-side proxy
-  const proxy = url => `/api/proxy?url=${url}`;
+  const getDownloadUrl = url => useProxy ? `/api/proxy?url=${url}` : url;
 
   const onload = () => {
     numLoaded = numLoaded + 1;
@@ -31,7 +33,7 @@
     <Icon src={SiSpinrilla} />
     {#if anchor}
       <img 
-        src={proxy(anchor.image)} 
+        src={getDownloadUrl(anchor.image)} 
         alt="Reference" 
         on:load={onload} />
     {/if}
@@ -41,7 +43,7 @@
     <Icon src={SiSpinrilla} />
     {#if similar}
       <img 
-        src={proxy(similar.image)} 
+        src={getDownloadUrl(similar.image)} 
         alt="Similar" 
         on:load={onload} />
     {/if}
@@ -51,7 +53,7 @@
     <Icon src={SiSpinrilla} />
     {#if dissimilar}
       <img 
-        src={proxy(dissimilar.image)}
+        src={getDownloadUrl(dissimilar.image)}
         alt="Different" 
         on:load={onload} />
     {/if}
