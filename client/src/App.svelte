@@ -59,18 +59,18 @@
     <p>
       Help us improve our data by providing feedback about this triplet. A "good" triplet is 
       one where images A and B depict similar motives or themes, and image C is as different 
-      to A and B as possible.
+      from A and B.
     </p>
 
     <p>
-      For example, two plans of the same or different buildings vs. a portrait would be a 
-      good triplet. A triplet where there this little similarity between A and B, or where
-      C is similar to A or B would be a bad triplet.
+      For example, two plans of buildings vs. a portrait would be a good triplet. A triplet where 
+      there this little similarity between A and B, or where C is very similar to A or B would be 
+      a bad triplet.
     </p>
 
     <p>
-      We are aware that ratings are subjective. That's not a problem! We want to collect as much -
-      and as diverse - data as possible.
+      We know that ratings are subjective. That's not a problem! We want to collect as much &
+      as diverse feedback as possible.
     </p>
   </div>
 
@@ -95,7 +95,7 @@
   </div>
 
   <div class="skip">
-    <button on:click={fetchTriplet} >Skip this triplet</button>
+    <button on:click={fetchTriplet} >Skip this Triplet</button>
   </div>
 </main>
 
@@ -192,6 +192,7 @@
     outline: none;
     font-size: 16px;
     text-decoration: underline;
-    color: #4b5563;;
+    color: #4b5563;
+    cursor: pointer;
   }
 </style>
