@@ -62,10 +62,12 @@
 
 <style>
   .triplet-container {
-    height:380px;
     display:grid;
     grid-template-columns: 33% 33% 33%;
     grid-gap:0.5%;
+    background-color: #ebebeb;
+    padding: 10px;
+    border-radius: 6px;
   }
 
   .triplet-image {
@@ -74,7 +76,6 @@
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    background-color: #cfcfcf;
   }
 
   @-webkit-keyframes rotating {
@@ -122,7 +123,7 @@
 
   .triplet-image img {
     max-width: 100%;
-    max-height: 360px;
+    max-height: 280px;
     z-index: 2;
   }
 </style>

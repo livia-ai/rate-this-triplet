@@ -26,8 +26,8 @@
   </div>
   <div class="instructions">
     <p>
-      Images A and B show similar motives or themes. 
-      Image C is sufficiently different from A and B.
+      Similar motives or themes in A and B. C is sufficiently 
+      different.
     </p>
   </div>
 </button>

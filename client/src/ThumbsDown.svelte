@@ -25,9 +25,7 @@
   </div>
   <div class="instructions">
     <p>
-      Images A and B don't show similar motives or themes, 
-      image C is too similar to A or B, or there is not
-      much observable difference between A, B and C.
+      No similarity between A and B, or C too similar to A or B.
     </p>
   </div>
 </button>
@@ -50,7 +48,7 @@
     color: #ce2727;
   }
 
-  button .instructions:hover {
+  button:enabled .instructions:hover {
     border-color: #d83636;
     color: #d83636; 
   }
