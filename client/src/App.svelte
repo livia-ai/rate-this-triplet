@@ -53,7 +53,7 @@
 </script>
 
 <main>
-  <div>
+  <div class="intro">
     <h1>Rate this Triplet</h1>
 
     <p>
@@ -81,18 +81,117 @@
     on:loaded={onTripletLoaded} />
 
   <div class="rate-buttons-container">
-    <ThumbsUp 
-      disabled={loading}
-      on:click={onRate('GOOD')} />
+    <div>
+      <ThumbsUp 
+        disabled={loading}
+        on:click={onRate('GOOD')} />
+    </div>
 
-    <ThumbsDown 
-      disabled={loading}
-      on:click={onRate('BAD')} />
+    <div>
+      <ThumbsDown 
+        disabled={loading}
+        on:click={onRate('BAD')} />
+    </div>
   </div>
 
-  <button on:click={fetchTriplet}>Skip</button>
+  <div class="skip">
+    <button on:click={fetchTriplet} >Skip this triplet</button>
+  </div>
 </main>
 
 <style>
+  main {
+    padding: 10px 20px;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    color: #4b5563;
+    line-height: 1.625;
+  }
 
+  main .intro {
+    padding: 0 0 20px 0;
+  }
+
+  main h1 {
+    color: #4b5563;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  main p {
+    font-size: 16px;
+  }
+
+  .rate-buttons-container {
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-around;
+  }
+
+  :global(.rate-buttons-container button) {
+    width:400px;
+    background-color: #fff;
+    outline: none;
+    padding: 0;
+    border: none;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    color: #d1d1d1;
+    font-size: 15px;
+    line-height: 140%;
+    cursor: pointer;
+    border-radius:6px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  }
+
+  :global(.rate-buttons-container button .icon-container) {
+    background-color: #d1d1d1;
+    padding: 20px 0;
+    border-radius:6px 6px 0 0;
+  }
+
+  :global(.rate-buttons-container button .icon-container svg) {
+    font-size: 50px;
+    color: #fff;
+  }
+
+  :global(.rate-buttons-container button .icon-container svg path) {
+    fill: #fff;
+  }
+
+  :global(.rate-buttons-container button .illustration) {
+    padding: 15px 0 0 0;
+  }
+
+  :global(.rate-buttons-container button .illustration svg) {
+    font-size: 30px;
+  }
+
+  :global(.rate-buttons-container button .instructions) {
+    margin: 0;
+    border-color: #d1d1d1;
+    border-style: solid;
+    border-width: 0 2px 2px 2px;
+    border-radius:0 0 6px 6px;
+    height: 110px;
+    display:flex;
+    align-items: center;
+  }
+
+  :global(.rate-buttons-container button .instructions p) {
+    margin: 0;
+    padding: 0 20px;
+  }
+
+  .skip {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .skip button {
+    background-color:transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #4b5563;;
+  }
 </style>
