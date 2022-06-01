@@ -14,7 +14,7 @@
   });
 
   // Runs file downloads through the server-side proxy
-  const getDownloadUrl = url => triplet.useProxy ? `/api/proxy?url=${url}` : url;
+  const getDownloadUrl = url => triplet.proxy ? `/api/proxy?url=${url}` : url;
 
   const onload = () => {
     numLoaded = numLoaded + 1;
