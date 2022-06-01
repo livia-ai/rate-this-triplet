@@ -13,6 +13,8 @@ services:
       - net
       
   server: 
+    depends_on:
+      - rethinkdb
     container_name: rate-this-triplet-server
     build: 
       context: server

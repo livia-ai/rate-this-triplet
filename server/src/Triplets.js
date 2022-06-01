@@ -25,8 +25,6 @@ const triplets = TripletConfig.reduce((all, config) => {
   return [...all, ...triplets];
 }, []);
 
-console.log(triplets);
-
 export const getRandomTriplet = () => {
   const randomIndex = Math.floor(Math.random() * triplets.length);
   return triplets[randomIndex];

@@ -37,7 +37,6 @@ app.post('/api/rating', (req, res) => {
 
 // Helper proxy method to get around CORS and deep linking blocks
 app.get('/api/proxy', (req, res) => {
-  console.log('proxying', req.query.url);
   const { url } = req.query;
   request.get(url).pipe(res);
 });
