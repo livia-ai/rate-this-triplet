@@ -5,28 +5,20 @@
 
   import { onMount } from 'svelte';
 
-  let useProxy;
-  let anchor;
-  let similar;
-  let dissimilar;
+  let triplet;
 
   let loading = true;
 
   const fetchTriplet = () => {
     loading = true;
 
-    useProxy = false;
-    anchor = null;
-    similar = null;
-    dissimilar = null;
+    triplet = null;
 
     fetch('/api/triplet')
       .then(res => res.json())
       .then(data => {
-        useProxy = data.proxy;
-        anchor = data.anchor;
-        similar = data.similar;
-        dissimilar = data.dissimilar;
+        console.log(data);
+        triplet = data;
       });
   };
 
@@ -41,9 +33,11 @@
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        anchor: anchor.id,
-        similar: similar.id,
-        dissimilar: dissimilar.id,
+        anchor: triplet.anchor.id,
+        similar: triplet.similar.id,
+        dissimilar: triplet.dissimilar.id,
+        method: triplet.method,
+        museum: triplet.museum,
         rating
       })
     });
@@ -80,10 +74,7 @@
   </div>
 
   <Triplet 
-    useProxy={useProxy}
-    anchor={anchor} 
-    similar={similar} 
-    dissimilar={dissimilar} 
+    triplet={triplet}
     on:loaded={onTripletLoaded} />
 
   <div class="rate-buttons-container">

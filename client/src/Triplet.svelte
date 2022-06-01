@@ -3,11 +3,7 @@
   import SiSpinrilla from 'svelte-icons-pack/si/SiSpinrilla';
   import { afterUpdate, createEventDispatcher } from 'svelte';
 
-  export let useProxy; 
-
-  export let anchor;
-  export let similar;
-  export let dissimilar;
+  export let triplet; 
 
   const dispatch = createEventDispatcher();
 
@@ -18,7 +14,7 @@
   });
 
   // Runs file downloads through the server-side proxy
-  const getDownloadUrl = url => useProxy ? `/api/proxy?url=${url}` : url;
+  const getDownloadUrl = url => triplet.useProxy ? `/api/proxy?url=${url}` : url;
 
   const onload = () => {
     numLoaded = numLoaded + 1;
@@ -31,9 +27,9 @@
 <div class="triplet-container">
   <div class="triplet-image">
     <Icon src={SiSpinrilla} />
-    {#if anchor}
+    {#if triplet}
       <img 
-        src={getDownloadUrl(anchor.image)} 
+        src={getDownloadUrl(triplet.anchor.image)} 
         alt="Reference" 
         on:load={onload} />
     {/if}
@@ -41,9 +37,9 @@
 
   <div class="triplet-image">
     <Icon src={SiSpinrilla} />
-    {#if similar}
+    {#if triplet}
       <img 
-        src={getDownloadUrl(similar.image)} 
+        src={getDownloadUrl(triplet.similar.image)} 
         alt="Similar" 
         on:load={onload} />
     {/if}
@@ -51,9 +47,9 @@
 
   <div class="triplet-image">
     <Icon src={SiSpinrilla} />
-    {#if dissimilar}
+    {#if triplet}
       <img 
-        src={getDownloadUrl(dissimilar.image)}
+        src={getDownloadUrl(triplet.dissimilar.image)}
         alt="Different" 
         on:load={onload} />
     {/if}

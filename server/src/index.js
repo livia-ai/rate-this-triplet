@@ -25,11 +25,11 @@ app.get('/api/triplet', (req, res) => {
 
 // Records a triplet rating
 app.post('/api/rating', (req, res) => {
-  const { anchor, similar, dissimilar, rating } = req.body;
+  const { museum, method, anchor, similar, dissimilar, rating } = req.body;
   const timestamp = new Date().toISOString();
 
   insertRating({
-    anchor, similar, dissimilar, rating, timestamp
+    museum, method, anchor, similar, dissimilar, rating, timestamp
   });
 
   res.json({ message: 'Thanks' });
