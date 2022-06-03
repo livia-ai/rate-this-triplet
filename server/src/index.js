@@ -41,7 +41,9 @@ app.post('/api/rating', (req, res) => {
 });
 
 app.get('/api/ratings', (req, res) => {
-  listRatings().then(result => {
+  const { offset, size } = req.query;
+
+  listRatings(offset, size).then(result => {
     res.json(result);
   });
 });
