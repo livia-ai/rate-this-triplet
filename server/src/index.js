@@ -12,9 +12,14 @@ app.use(express.json());
 
 const server = http.createServer(app);
 
+console.log('Checking if DB exists...');
 exists().then(exists => {
-  if (!exists)
+  if (!exists) {
+    console.log('DB does not exist, creating...');
     initDB();
+  } else {
+    console.log('Exists.');
+  }
 });
 
 // Returns a random triplet

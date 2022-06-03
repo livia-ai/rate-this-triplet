@@ -3,12 +3,11 @@ version: '3.9'
 services:
   rethinkdb:
     image: rethinkdb:2.4
+    # ports:
+    #  - 8081:8080
     expose:
-      - 8080
       - 28015
     restart: always
-    volumes:
-      - ./server/data/db:/app
     networks:
       - net
       
@@ -21,6 +20,7 @@ services:
       dockerfile: Dockerfile
     expose:
       - 5000
+    restart: always
     networks:
       - net
 

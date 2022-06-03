@@ -17,7 +17,6 @@
     fetch('/api/triplet')
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         triplet = data;
       });
   };

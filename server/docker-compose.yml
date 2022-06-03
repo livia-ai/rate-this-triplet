@@ -6,5 +6,3 @@ services:
     ports:
       - 8081:8080
       - 28015:28015
-    volumes:
-      - ./data/db:/app
