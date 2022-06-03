@@ -4,10 +4,10 @@ import fs from 'fs';
 // different museum and based on a different embedding
 // method.
 const TripletConfig = [
-  { museum: 'wm', method: 'sentence', path: './data/triplets_wm_sbert_title_subjects_256d_300.json', proxy: true },
-  { museum: 'wm', method: 'graph', path: './data/triplets_wm_graph_300.json', proxy: true },
-  { museum: 'bel', method: 'sentence', path: './data/triplets_bel_sbert_title_description_256d_300.json' }
-  // { museum: 'bel', method: 'graph', path: './data/triplets_bel_graph_256d_300.json' },
+  { museum: 'wm', method: 'sentence', path: './data/triplets_wm_sbert_title_subjects_256d_500.json', proxy: true },
+  { museum: 'wm', method: 'graph', path: './data/triplets_wm_graph_500.json', proxy: true },
+  { museum: 'bel', method: 'sentence', path: './data/triplets_bel_sbert_Title_Description_ExpertTags_256d_500.json' },
+  { museum: 'bel', method: 'graph', path: './data/triplets_bel_graph_500.json' },
 ]
 
 const triplets = TripletConfig.reduce((all, config) => {
@@ -24,6 +24,8 @@ const triplets = TripletConfig.reduce((all, config) => {
   
   return [...all, ...triplets];
 }, []);
+
+console.log('Loaded ' + triplets.length + ' triplets');
 
 export const getRandomTriplet = () => {
   const randomIndex = Math.floor(Math.random() * triplets.length);

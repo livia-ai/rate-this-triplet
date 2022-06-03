@@ -64,6 +64,7 @@
     background-color: #ebebeb;
     padding: 10px;
     border-radius: 6px;
+    min-height: 300px;
   }
 
   .triplet-image {
