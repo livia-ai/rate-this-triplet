@@ -49,23 +49,6 @@
 </script>
 
 <main>
-  <div class="intro">
-    <h1>Rate this Triplet</h1>
-
-    <p>
-      <strong>Help us improve our data by providing feedback about this triplet.</strong> A good triplet   
-      is one where images A and B show similar motives or themes, and image C is different 
-      from A and B. If there is little similarity between A and B, or C is similar to A or B, that's a 
-      bad triplet.
-    </p>
-
-    <p>
-      <strong>We know that ratings are subjective. That's no problem!</strong> We want to collect as much &
-      as diverse feedback as possible. Don't overthink it. Just focus on image motives and themes, and 
-      rate according to your intuition. 
-    </p>
-  </div>
-
   <div class="abc">
     <div>A</div>
     <div>B</div>
@@ -101,20 +84,6 @@
     font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
     color: #4b5563;
     line-height: 1.625;
-  }
-
-  main .intro {
-    padding: 0 0 20px 0;
-  }
-
-  main h1 {
-    color: #4b5563;
-    text-align: center;
-    font-size: 28px;
-  }
-
-  main p {
-    font-size: 16px;
   }
 
   .abc {
