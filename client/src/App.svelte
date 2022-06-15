@@ -119,6 +119,23 @@
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
   }
 
+  @media (max-width: 700px) {
+
+    .rate-buttons-container {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+
+    .rate-buttons-container > div {
+      margin: 10px 0;
+    }
+
+    :global(.rate-buttons-container button) {
+      width: 100%;
+    }
+
+  }
+
   :global(.rate-buttons-container button .icon-container) {
     background-color: #ebebeb;
     padding: 10px 0 5px 0;
