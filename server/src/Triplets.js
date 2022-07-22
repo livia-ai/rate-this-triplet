@@ -10,7 +10,7 @@ const TripletConfig = [
   { museum: 'bel', method: 'sentence', path: './data/triplets_bel_sbert_Title_Description_ExpertTags_256d_500.json' },
   { museum: 'bel', method: 'graph', path: './data/triplets_bel_graph_500.json' },
   */
-  { museum: 'mak', method: 'sentence', path: './data/triplets_mak_sbert_title_description_256d_500.json' }
+  { museum: 'mak', method: 'sentence', path: './data/triplets_mak_sbert_title_description_256d_1k.json' }
 ]
 
 const triplets = TripletConfig.reduce((all, config) => {
